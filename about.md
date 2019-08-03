@@ -15,5 +15,5 @@ permalink: /about/
 - qt 
 
 ### 联系我
-- Email: [gcc_linux@foxmail.com]()
+- Email: <gcc_linux@foxmail.com>
 - Github: [JackLovel](https://github.com/JackLovel)
