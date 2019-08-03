@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 如何使用 github page 搭一个博客
-categories: jekyll 
+tags: jekyll
 ---
 
 ## 参考文档
