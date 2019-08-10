@@ -13,6 +13,7 @@ permalink: /blogroll/
 - [Xah's blog](http://ergoemacs.org/emacs/emacs.html)
 
 > Pl(函数式)
+
 - [千里冰封 大佬](https://ice1000.org/)
 
 > Qt
