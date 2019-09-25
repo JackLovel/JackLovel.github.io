@@ -19,6 +19,7 @@ permalink: /blogroll/
 > Qt
 
 - [rekols 大佬](https://rekols.github.io/)
+- [cryfeifei](http://www.cryfeifei.cn/)
 
 > LaTeX
 
