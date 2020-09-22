@@ -11,6 +11,7 @@ permalink: /blogroll/
 - [猫哥](https://manateelazycat.github.io/)
 - [chen bin](http://blog.binchen.org)
 - [Xah's blog](http://ergoemacs.org/emacs/emacs.html)
+- [Mikz Zamansky blog](https://cestlaz.github.io/stories/emacs/), 油管上有很多不错的视频
 
 > Pl(函数式)
 
