@@ -1,5 +1,6 @@
-** [[init_blog.sh][init blog]]
+** 初始化
 
+[[init_blog.sh][博客初始化脚本]]
 #+BEGIN_SRC 
 $ sudo apt install -y ruby-dev 
 $ sudo gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
