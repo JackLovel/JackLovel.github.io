@@ -10,7 +10,7 @@ $ cd JackLovel.github.io
 $ bundle install 
 #+END_SRC
 
-** run 
+** 运行
 #+BEGIN_SRC 
 $ bundle exec jekyll serve
 #+END_SRC
