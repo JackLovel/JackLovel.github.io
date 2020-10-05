@@ -1,4 +1,4 @@
-** [[init blog][www.baidu.com]]
+** [[init_blog.sh][init blog]]
 
 #+BEGIN_SRC 
 $ sudo apt install -y ruby-dev 
