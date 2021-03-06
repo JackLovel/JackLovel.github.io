@@ -1,0 +1,30 @@
+I"(<h2 id="安装-auctex">安装 auctex</h2>
+<p>使用 emacs 的包管理器，安装 auctex</p>
+
+<h2 id="配置-emacs">配置 emacs</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;; package: auctex 
+(load "auctex.el" nil t t)
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+;; 使用 okular 来查看 pdf, 这里如果没有 Okular, 换成其他pdf工具也可以。
+(setq TeX-view-program-list '(("okular" "okular %o")))
+(setq TeX-view-program-selection '((output-pdf "okular")))
+
+;; xelatex编译配置
+(add-hook 'LaTeX-mode-hook
+  (lambda()
+  (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
+  (setq TeX-command-default "XeLaTeX")
+  (setq TeX-save-querynil )
+  (setq TeX-show-compilation t)
+))
+</code></pre></div></div>
+
+<h2 id="常用的快捷键">常用的快捷键</h2>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C-c C-c 编译
+C-c C-v 预览pdf
+</code></pre></div></div>
+
+:ET

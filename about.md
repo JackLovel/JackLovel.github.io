@@ -10,10 +10,11 @@ permalink: /about/
 ```
 
 ### 爱好
-- git, github
-- python, c++ 
+- python, c++
+- vim
 - qt 
+- latex
 
 ### 联系我
-- Email: <gcc_linux@foxmail.com>
+- Email: <gogkatsu@outlook.com>
 - Github: [JackLovel](https://github.com/JackLovel)

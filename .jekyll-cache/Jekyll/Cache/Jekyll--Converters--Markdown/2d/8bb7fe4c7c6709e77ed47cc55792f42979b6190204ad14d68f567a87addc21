@@ -1,0 +1,16 @@
+I"<h3 id="安装">安装</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install i3 fish 
+
+# use git install oh-my-fish
+$ git clone https://github.com/oh-my-fish/oh-my-fish
+$ cd oh-my-fish
+$ bin/install --offline
+</code></pre></div></div>
+
+<h3 id="修改-dpi">修改 dpi</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ emacs ~/.Xresources
+
+// 添加 Xft.dpi: 150 
+$ reboot 
+</code></pre></div></div>
+:ET

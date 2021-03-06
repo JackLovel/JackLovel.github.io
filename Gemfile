@@ -9,12 +9,11 @@ source "https://gems.ruby-china.com/"
 #
 # This will help ensure the proper Jekyll version is running.
 
+gem 'jekyll', '~> 4.2'
 gem 'kramdown-parser-gfm', '~> 1.1'
 gem "kramdown", "~>2.3.0"
-gem 'github-pages', '~> 212'
 
 # Happy Jekylling!
-gem "jekyll"
 gem "webrick" 
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
@@ -32,7 +31,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
-  gem "tzinfo", "~> 1.2"
+  gem "tzinfo"
   gem "tzinfo-data"
 end
 

@@ -1,0 +1,60 @@
+I"�<p>原文地址(转)：<a href="http://www.cryfeifei.cn/356.html">Qt主界面卡死的解决方案-一些具体实现方式</a> <br />
+作者：<a href="https://www.zhihu.com/people/icoder">张小飞</a></p>
+
+<h3 id="代码">代码：</h3>
+<p>重写 QObject</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 头文件</span>
+<span class="k">class</span> <span class="nc">workThread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">QObject</span>
+<span class="p">{</span>
+    <span class="n">Q_OBJECT</span>
+<span class="nl">public:</span>
+    <span class="n">workThread</span><span class="p">(</span><span class="n">QObject</span><span class="o">*</span> <span class="n">parent</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">);</span>
+    <span class="o">~</span><span class="n">workThread</span><span class="p">();</span>
+<span class="k">public</span> <span class="n">slots</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">start1</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="n">doWork</span><span class="p">();</span>
+<span class="nl">signals:</span>
+    <span class="kt">void</span> <span class="n">workFinished</span><span class="p">();</span>
+    <span class="kt">void</span> <span class="n">workStart</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="c1">//cpp</span>
+<span class="n">workThread</span><span class="o">::</span><span class="n">workThread</span><span class="p">(</span><span class="n">QObject</span><span class="o">*</span> <span class="n">parent</span><span class="p">)</span> <span class="o">:</span> <span class="n">QObject</span> <span class="p">(</span><span class="n">parent</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">}</span>
+<span class="n">workThread</span><span class="o">::~</span><span class="n">workThread</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">workThread</span><span class="o">::</span><span class="n">start1</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">emit</span> <span class="n">workStart</span><span class="p">();</span>
+    <span class="n">doWork</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="n">workThread</span><span class="o">::</span><span class="n">doWork</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">qDebug</span><span class="p">()</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">emit</span> <span class="n">workFinished</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>使用方法</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">QThread</span><span class="o">*</span> <span class="n">m_workerThread</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">QThread</span><span class="p">();</span>
+<span class="n">workThread</span><span class="o">*</span> <span class="n">worker</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">workThread</span><span class="p">();</span>
+<span class="n">worker</span><span class="o">-&gt;</span><span class="n">moveToThread</span><span class="p">(</span><span class="n">m_workerThread</span><span class="p">);</span>
+
+<span class="n">connect</span><span class="p">(</span><span class="n">m_workerThread</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QThread</span><span class="o">::</span><span class="n">started</span><span class="p">,</span> <span class="n">worker</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">workThread</span><span class="o">::</span><span class="n">start1</span><span class="p">);</span>
+<span class="n">connect</span><span class="p">(</span><span class="n">worker</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">workThread</span><span class="o">::</span><span class="n">workFinished</span><span class="p">,</span> <span class="n">m_workerThread</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QThread</span><span class="o">::</span><span class="n">quit</span><span class="p">);</span>
+<span class="n">connect</span><span class="p">(</span><span class="n">m_workerThread</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QThread</span><span class="o">::</span><span class="n">finished</span><span class="p">,</span> <span class="n">m_workerThread</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">QThread</span><span class="o">::</span><span class="n">deleteLater</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>完整代码
+<a href="https://gitee.com/wcc210/QtDemo/tree/master/ThreadDemo">下载地址</a></li>
+</ul>
+:ET

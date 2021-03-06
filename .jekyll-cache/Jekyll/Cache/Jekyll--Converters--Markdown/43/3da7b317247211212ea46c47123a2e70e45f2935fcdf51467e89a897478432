@@ -1,0 +1,11 @@
+I"�<h3 id="基本代码">基本代码</h3>
+<p>```c++
+void MainWindow::mousePressEvent(QMouseEvent *e) // 鼠标按下事件
+{</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// globalPos()是相对于屏幕的坐标， pos()是窗体左上角相对于屏幕左上角的坐标
+
+if (e-&gt;button() == Qt::LeftButton)   // 如果是鼠标左键按下
+    offset = e-&gt;globalPos() - pos();  }
+</code></pre></div></div>
+:ET
