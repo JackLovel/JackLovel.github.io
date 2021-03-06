@@ -11,7 +11,7 @@ source "https://gems.ruby-china.com/"
 
 gem 'kramdown-parser-gfm', '~> 1.1'
 gem "kramdown", "~>2.3.0"
-gem "github-pages"
+gem 'github-pages', '~> 212'
 
 # Happy Jekylling!
 gem "jekyll"

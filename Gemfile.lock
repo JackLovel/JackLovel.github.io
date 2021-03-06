@@ -261,7 +261,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  github-pages
+  github-pages (~> 212)
   jekyll
   jekyll-feed (~> 0.6)
   kramdown (~> 2.3.0)
