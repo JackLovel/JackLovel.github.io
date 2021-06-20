@@ -1,0 +1,39 @@
+---
+layout: post
+title: qt中鼠标事件的基本代码
+tags: 
+- qt
+---
+
+### 基本代码
+```c++
+void MainWindow::mousePressEvent(QMouseEvent *e) // 鼠标按下事件
+{
+    
+    // globalPos()是相对于屏幕的坐标， pos()是窗体左上角相对于屏幕左上角的坐标
+    
+    if (e->button() == Qt::LeftButton)   // 如果是鼠标左键按下
+        offset = e->globalPos() - pos(); 
+}
+
+void MainWindow::mouseMoveEvent(QMouseEvent *e) // 鼠标移动事件
+{
+    if (e->buttons() & Qt::LeftButton) {
+        QPoint temp;
+        temp = e->globalPos() - offset;
+        move(temp); // 使用鼠标指针当前的位置减去差值，就得到了窗口应该移动的位置
+    }
+}
+
+// 鼠轮事件
+void MainWindow::wheelEvent(QWheelEvent *e) // 滚轮事件
+{
+    if (e->delta() > 0) {
+        this->textEdit->zoomIn();
+    } else {
+        this->textEdit->zoomOut();
+    }
+}
+```
+### 参考
+* 《Qt Quick 快速入门》
