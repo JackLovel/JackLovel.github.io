@@ -12,10 +12,9 @@
         <id>https://jackLovel.github.io/blog/about</id>
         <link href="https://jackLovel.github.io/blog/about"/>
         <updated>2024-02-04T11:51:17.062Z</updated>
-        <summary type="html"><![CDATA[關於我]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="關於我">關於我<a href="https://jacklovel.github.io/blog/about#%E9%97%9C%E6%96%BC%E6%88%91" class="hash-link" aria-label="Direct link to 關於我" title="Direct link to 關於我">​</a></h2>
-<p>大家好，这是我的个人博客。</p>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="愛好">愛好<a href="https://jacklovel.github.io/blog/about#%E6%84%9B%E5%A5%BD" class="hash-link" aria-label="Direct link to 愛��好" title="Direct link to 愛好">​</a></h3>
+        <summary type="html"><![CDATA[大家好，这是我的个人博客。]]></summary>
+        <content type="html"><![CDATA[<p>大家好，这是我的个人博客。</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="愛好">愛好<a href="https://jacklovel.github.io/blog/about#%E6%84%9B%E5%A5%BD" class="hash-link" aria-label="Direct link to 愛好" title="Direct link to 愛好">​</a></h3>
 <ul>
 <li>python, c++</li>
 <li>vim</li>
@@ -23,7 +22,7 @@
 <li>latex</li>
 </ul>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="聯系我">聯系我<a href="https://jacklovel.github.io/blog/about#%E8%81%AF%E7%B3%BB%E6%88%91" class="hash-link" aria-label="Direct link to 聯系我" title="Direct link to 聯系我">​</a></h3>
-<p>Email: <a href="mailto:gogkatsu@outlook.com" target="_blank" rel="noopener noreferrer">gogkatsu@outlook.com</a>
-Github: <a href="https://github.com/JackLovel" target="_blank" rel="noopener noreferrer">JackLovel</a></p>]]></content>
+<p>Email: <a href="mailto:gogkatsu@outlook.com" target="_blank" rel="noopener noreferrer">gogkatsu@outlook.com</a></p>
+<p>Github: <a href="https://github.com/JackLovel" target="_blank" rel="noopener noreferrer">JackLovel</a></p>]]></content>
     </entry>
 </feed>
